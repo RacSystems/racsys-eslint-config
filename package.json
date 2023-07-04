@@ -1,5 +1,5 @@
 {
-  "name": "@racsys/eslint-config",
+  "name": "racsys-eslint-config",
   "version": "1.0.0",
   "description": "ESLint configuration used by Rac Systems",
   "main": "index.js",
