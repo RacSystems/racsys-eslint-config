@@ -22,75 +22,8 @@ module.exports = {
     'react',
     'jsx-a11y',
     '@typescript-eslint',
-    'eslint-plugin-import-helpers',
-    'sort-destructure-keys',
   ],
   rules: {
-    '@typescript-eslint/consistent-type-imports': [
-      'error',
-      {
-        fixStyle: 'inline-type-imports',
-      },
-    ],
-    'import-helpers/order-imports': [
-      'warn',
-      {
-        newlinesBetween: 'always', // new line between groups
-        groups: [
-          ['/^react$/'],
-          'module',
-          '/^constants/',
-          '/^enums/',
-          '/^hooks/',
-          '/^components/',
-          '/^pages/',
-          '/^routes/',
-          '/^services/',
-          '/^store/',
-          '/^helpers/',
-          '/^formatters/',
-          '/^models/',
-          '/^assets/',
-          '/^styles/',
-          ['parent', 'sibling', 'index'],
-        ],
-        alphabetize: { order: 'asc', ignoreCase: true },
-      },
-    ],
-    'sort-destructure-keys/sort-destructure-keys': 2,
-    'sort-imports': [
-      'error',
-      {
-        ignoreCase: true,
-        ignoreDeclarationSort: true,
-        ignoreMemberSort: false,
-        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
-      },
-    ],
-    'react/jsx-sort-props': [
-      'error',
-      {
-        callbacksLast: false,
-        shorthandFirst: false,
-        shorthandLast: false,
-        ignoreCase: true,
-        noSortAlphabetically: false,
-        reservedFirst: false,
-      },
-    ],
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        argsIgnorePattern: '_',
-      },
-    ],
-    'no-param-reassign': [
-      'error',
-      {
-        props: true,
-        ignorePropertyModificationsForRegex: ['^draft', '^current'],
-      },
-    ],
     'prettier/prettier': [
       'error',
       {
