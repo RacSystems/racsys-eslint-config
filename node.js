@@ -9,7 +9,11 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint'],
+  plugins: [
+    '@typescript-eslint',
+    'eslint-plugin-import-helpers',
+    'sort-destructure-keys'
+  ],
   rules: {
     'prettier/prettier': [
       'error',
@@ -19,7 +23,7 @@ module.exports = {
         singleQuote: true,
         trailingComma: 'all',
         arrowParens: 'always',
-        semi: false,
+        semi: true,
       },
     ],
     'import-helpers/order-imports': [
