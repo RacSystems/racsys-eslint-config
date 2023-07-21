@@ -1,8 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
-    jest: true,
+    es2021: true
   },
   extends: [
     'plugin:react/recommended',
@@ -21,20 +20,96 @@ module.exports = {
   plugins: [
     'react',
     'jsx-a11y',
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'eslint-plugin-import-helpers',
+    'sort-destructure-keys'
   ],
   rules: {
-    'prettier/prettier': ["error", {
-      'printWidth': 80,
-      'tabWidth': 2,
-      'singleQuote': true,
-      'trailingComma': 'all',
-      'arrowParens': 'always',
-      'semi': false,
-      'endOfLine': 'auto',
-    }],
+    'prettier/prettier': [
+      'error',
+      {
+        printWidth: 80,
+        tabWidth: 2,
+        singleQuote: true,
+        trailingComma: 'all',
+        arrowParens: 'always',
+        semi: true,
+        endOfLine: 'auto',
+      }
+    ],
+    'import-helpers/order-imports': [
+      'warn',
+      {
+        newlinesBetween: 'always',
+        groups: [
+          ['/^react$/'],
+          ['/react$/', '/styled-components/'],
+          '/react-router-dom/',
+          '/^react/',
+          'module',
+          '/^constants/',
+          '/^hooks/',
+          '/^components/',
+          '/^pages/',
+          '/^services/',
+          '/^utils/',
+          '/^assets/',
+          '/^styles/'
+          ['parent', 'sibling', 'index'],
+        ],
+        alphabetize: {
+          order: 'asc',
+          ignoreCase: true,
+        },
+      },
+    ],
+    'sort-destructure-keys/sort-destructure-keys': [
+      2,
+      {
+        caseSensitive: false,
+      },
+    ],
+    'sort-imports': [
+      'error',
+      {
+        ignoreCase: true,
+        ignoreDeclarationSort: true,
+        ignoreMemberSort: false,
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
+      },
+    ],
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        'selector': 'interface',
+        'format': ['PascalCase'],
+        'custom': {
+          'regex': '^I[A-Z]',
+          'match': true
+        }
+      },
+      {
+        'selector': 'enum',
+        'format': ['PascalCase'],
+        'custom': {
+          'regex': '^E[A-Z]',
+          'match': true
+        }
+      }
+    ],
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
+    'react/jsx-sort-props': [
+      'error',
+      {
+        'callbacksLast': false,
+        'shorthandFirst': false,
+        'shorthandLast': false,
+        'ignoreCase': true,
+        'noSortAlphabetically': false,
+        'reservedFirst': false
+      }
+    ],
     'jsx-a11y/alt-text': [
       'warn',
       {

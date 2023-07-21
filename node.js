@@ -3,7 +3,10 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: ['standard', 'plugin:prettier/recommended'],
+  extends: [
+    'standard',
+    'plugin:prettier/recommended'
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 'latest',
@@ -24,6 +27,7 @@ module.exports = {
         trailingComma: 'all',
         arrowParens: 'always',
         semi: true,
+        endOfLine: 'auto',
       },
     ],
     'import-helpers/order-imports': [
@@ -58,6 +62,25 @@ module.exports = {
         ignoreMemberSort: false,
         memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
       },
+    ],
+    '@typescript-eslint/naming-convention': [
+      'error',
+      {
+        'selector': 'interface',
+        'format': ['PascalCase'],
+        'custom': {
+          'regex': '^I[A-Z]',
+          'match': true
+        }
+      },
+      {
+        'selector': 'enum',
+        'format': ['PascalCase'],
+        'custom': {
+          'regex': '^E[A-Z]',
+          'match': true
+        }
+      }
     ],
     '@typescript-eslint/no-unused-vars': [
       'error',
