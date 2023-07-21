@@ -21,8 +21,8 @@ module.exports = {
     'react',
     'jsx-a11y',
     '@typescript-eslint',
-    'eslint-plugin-import-helpers',
-    'sort-destructure-keys'
+    'sort-destructure-keys',
+    'eslint-plugin-import-helpers'
   ],
   rules: {
     'prettier/prettier': [
@@ -36,32 +36,6 @@ module.exports = {
         semi: true,
         endOfLine: 'auto',
       }
-    ],
-    'import-helpers/order-imports': [
-      'warn',
-      {
-        newlinesBetween: 'always',
-        groups: [
-          ['/^react$/'],
-          ['/react$/', '/styled-components/'],
-          '/react-router-dom/',
-          '/^react/',
-          'module',
-          '/^constants/',
-          '/^hooks/',
-          '/^components/',
-          '/^pages/',
-          '/^services/',
-          '/^utils/',
-          '/^assets/',
-          '/^styles/'
-          ['parent', 'sibling', 'index'],
-        ],
-        alphabetize: {
-          order: 'asc',
-          ignoreCase: true,
-        },
-      },
     ],
     'sort-destructure-keys/sort-destructure-keys': [
       2,
@@ -94,6 +68,30 @@ module.exports = {
         'custom': {
           'regex': '^E[A-Z]',
           'match': true
+        }
+      }
+    ],
+    'import-helpers/order-imports': [
+      'warn',
+      {
+        'newlinesBetween': 'always',
+        'groups': [
+          ['/^react$/'],
+          ['/react$/', '/styled-components/'],
+          '/^react/',
+          'module',
+          '/^constants/',
+          '/^hooks/',
+          '/^components/',
+          '/^pages/',
+          '/^services/',
+          '/^utils/',
+          '/^assets/',
+          '/^styles/'
+        ],
+        'alphabetize': {
+          'order': 'asc',
+          'ignoreCase': true
         }
       }
     ],
