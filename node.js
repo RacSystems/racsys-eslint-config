@@ -30,6 +30,12 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '_',
+      },
+    ],
     'import-helpers/order-imports': [
       'warn',
       {
