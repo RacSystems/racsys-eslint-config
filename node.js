@@ -4,7 +4,7 @@ module.exports = {
     node: true,
   },
   extends: [
-    'standard',
+    'standard-with-typescript',
     'plugin:prettier/recommended'
   ],
   parser: '@typescript-eslint/parser',
@@ -28,12 +28,6 @@ module.exports = {
         arrowParens: 'always',
         semi: true,
         endOfLine: 'auto',
-      },
-    ],
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        argsIgnorePattern: '_',
       },
     ],
     'import-helpers/order-imports': [
