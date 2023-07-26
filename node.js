@@ -4,9 +4,9 @@ module.exports = {
     node: true,
   },
   extends: [
+    'eslint-config-prettier',
     'standard',
     'eslint:recommended',
-    'plugin:import/recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended'
   ],
