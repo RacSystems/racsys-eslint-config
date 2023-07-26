@@ -16,7 +16,8 @@ module.exports = {
   },
   plugins: [
     'eslint-plugin-import-helpers',
-    'sort-destructure-keys'
+    'sort-destructure-keys',
+    'typescript-sort-keys'
   ],
   rules: {
     'prettier/prettier': [
@@ -89,6 +90,8 @@ module.exports = {
         argsIgnorePattern: '_',
       },
     ],
+    'typescript-sort-keys/interface': 'error',
+    'typescript-sort-keys/string-enum': 'error',
   },
   settings: {
     'import/parsers': {
