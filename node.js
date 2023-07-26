@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'standard',
     'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended'
   ],
   parser: '@typescript-eslint/parser',
@@ -14,7 +15,6 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    '@typescript-eslint',
     'eslint-plugin-import-helpers',
     'sort-destructure-keys'
   ],
